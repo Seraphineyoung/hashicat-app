@@ -200,10 +200,16 @@ resource "aws_key_pair" "hashicat" {
 
 
 module "s3-bucket" {
-  source  = "app.terraform.io/aws-immersion-day-31/s3-bucket/aws"
-  version = "3.1.0"
-  tags = {
-    "Version" = "1.0.0"
-  }
+  source              = "cloudposse/s3-bucket/aws"
+  version             = "3.1.0"
   s3_object_ownership = "BucketOwnerEnforced"
 }
+
+# module "s3-bucket" {
+#   source  = "app.terraform.io/aws-immersion-day-31/s3-bucket/aws"
+#   version = "3.1.0"
+#   tags = {
+#     "Version" = "1.0.0"
+#   }
+#   s3_object_ownership = "BucketOwnerEnforced"
+# }
